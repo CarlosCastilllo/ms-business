@@ -1,5 +1,86 @@
 {
   "commands": {
+    "crud": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/crud",
+      "commandName": "crud",
+      "description": "Crea un CRUD para la entidad especificada",
+      "args": [
+        {
+          "type": "string",
+          "propertyName": "nombreEnSingular",
+          "name": "nombreEnSingular",
+          "required": true,
+          "description": "Nombre en singular de la entidad"
+        },
+        {
+          "type": "string",
+          "propertyName": "nombreEnPlural",
+          "name": "nombreEnPlural",
+          "required": true,
+          "description": "Nombre en plural de la entidad"
+        },
+        {
+          "type": "string",
+          "propertyName": "atributos",
+          "name": "atributos",
+          "required": true,
+          "description": "Lista de atributos en el formato nombre:tipo separados por comas"
+        }
+      ],
+      "aliases": [],
+      "flags": [
+        {
+          "name": "m",
+          "propertyName": "m",
+          "type": "boolean"
+        }
+      ]
+    },
+    "relation": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/Relation",
+      "commandName": "relation",
+      "description": "Crea relaciones entre dos modelos (1:n o 1:1)",
+      "args": [
+        {
+          "type": "string",
+          "propertyName": "model1",
+          "name": "model1",
+          "required": true,
+          "description": "Nombre del primer modelo (singular)"
+        },
+        {
+          "type": "string",
+          "propertyName": "relationType",
+          "name": "relationType",
+          "required": true,
+          "description": "Tipo de relación entre los modelos (1:n o 1:1)"
+        },
+        {
+          "type": "string",
+          "propertyName": "model2",
+          "name": "model2",
+          "required": true,
+          "description": "Nombre del segundo modelo"
+        },
+        {
+          "type": "string",
+          "propertyName": "llave",
+          "name": "llave",
+          "required": true,
+          "description": "Llave foránea"
+        }
+      ],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",
